@@ -1,4 +1,4 @@
-﻿
+
 using SQLCodeGenerator;
 using System.Data;
 
@@ -12,15 +12,15 @@ while(!q)
     switch(c.Key)
     {
         case ConsoleKey.Q:
-        case ConsoleKey.NumPad3:
+        case ConsoleKey.D3:
             q = true;
             break;
         case ConsoleKey.I:
-        case ConsoleKey.NumPad1:
+        case ConsoleKey.D1:
             st = 1;
             break;
         case ConsoleKey.U:
-        case ConsoleKey.NumPad2:
+        case ConsoleKey.D2:
             st = 2;
             break;
     }
