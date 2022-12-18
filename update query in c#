@@ -1,0 +1,35 @@
+ private void button3_Click(object sender, EventArgs e)
+        {
+
+            MySqlConnection Connectionstring = new MySqlConnection("server=localhost;user=root;database=Hostel_Management_system;port=3306;password=");
+            string UPDATE = "UPDATE Hostel  SET Hostel_id='" +  textBox1.Text + "',Address='" +   textBox3.Text + "',Hostel_Name='" +  textBox2.Text + "',WHERE Hostel_id ='" + textBox1.Text + "' ";
+           
+            Connectionstring.Open();
+            try
+            {
+                MySqlCommand command = new MySqlCommand(UPDATE, Connectionstring);
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("DATA UPDATED");
+
+                }
+                else
+                {
+                    MessageBox.Show("Data UPDATION FAILED");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+
+            Connectionstring.Close();
+
+           textBox1.Text = " ";
+            textBox3.Text = "";
+            textBox2.Text = " "; 
+
+        }
